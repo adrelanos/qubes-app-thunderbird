@@ -18,6 +18,5 @@ source-debian-quilt-copy-in:
 	-$(shell $(ORIG_SRC)/debian-quilt $(ORIG_SRC)/series-debian-vm.conf $(CHROOT_DIR)/$(DIST_SRC)/$(DEBIAN)/patches)
 	tar cfz $(ORIG_FILE) --exclude-vcs --exclude=rpm --exclude=pkgs --exclude=deb --exclude=debian --exclude=debian.debian --exclude=debian.qubuntu -C $(CHROOT_DIR)/$(DIST_SRC) .
 	tar xfz $(ORIG_FILE) -C $(CHROOT_DIR)/$(DIST_SRC)/$(DEBIAN) --strip-components=1 
-	mv $(ORIG_FILE) $(CHROOT_DIR)/$(DIST_SRC)
 
 # vim: filetype=make
